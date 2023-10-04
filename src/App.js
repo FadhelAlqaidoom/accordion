@@ -28,12 +28,13 @@ export default function App() {
         <AccordionItem
           key={i}
           title={faq.title}
-          text={faq.text}
           num={i}
           id={i}
           handleOpen={handleOpen}
           openId={openId}
-        />
+        >
+          {faq.text}
+        </AccordionItem>
       ))}
     </div>
   );

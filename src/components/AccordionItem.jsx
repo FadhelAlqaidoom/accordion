@@ -2,7 +2,7 @@ import '../styles.css';
 
 const AccordionItem = ({
   title,
-  text,
+  children,
   num,
   handleOpen,
   openId,
@@ -16,7 +16,7 @@ const AccordionItem = ({
       <p className="number">{num < 9 ? `0${num + 1}` : num + 1}</p>
       <p className="title">{title}</p>
       <p className="icon">{openId === id ? '-' : '+'}</p>
-      {openId === id && <div className="content-box">{text}</div>}
+      {openId === id && <div className="content-box">{children}</div>}
     </div>
   );
 };
