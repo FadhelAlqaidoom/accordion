@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import Accordion from './components/Accordion';
 import './styles.css';
+import AccordionItem from './components/AccordionItem';
 
 const faqs = [
   {
@@ -25,7 +25,7 @@ export default function App() {
   return (
     <div className="accordion">
       {faqs.map((faq, i) => (
-        <Accordion
+        <AccordionItem
           key={i}
           title={faq.title}
           text={faq.text}
