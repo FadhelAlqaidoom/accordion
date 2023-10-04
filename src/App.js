@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Accordion from './components/Accordion';
 import './styles.css';
 
@@ -17,6 +18,10 @@ const faqs = [
 ];
 
 export default function App() {
+  const [openId, setOpenId] = useState(0);
+  const handleOpen = (id) => {
+    setOpenId(id !== openId ? id : null);
+  };
   return (
     <div className="accordion">
       {faqs.map((faq, i) => (
@@ -25,6 +30,9 @@ export default function App() {
           title={faq.title}
           text={faq.text}
           num={i}
+          id={i}
+          handleOpen={handleOpen}
+          openId={openId}
         />
       ))}
     </div>
